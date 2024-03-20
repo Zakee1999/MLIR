@@ -1,1 +1,7 @@
-cmake_minimum_ver
+cmake_minimum_required(VERSION 3.28.3)
+
+project(zakee-mlir LANGUAGE CXX C)
+
+set(CMAKE_CXX_STANDARD 20 CACHE STRING "Using C++ 20 version")
+
+find
