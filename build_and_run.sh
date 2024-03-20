@@ -5,7 +5,7 @@
 
 # Set up MLIR
 LLVM_REPO=./external/llvm-project
-BUILD_DIR=$LLVM_REPO/bld
+BUILD_DIR=$LLVM_REPO/build
 INSTALL_DIR=$LLVM_REPO/install
 
 rm -r $BUILD_DIR
@@ -36,10 +36,10 @@ popd
 # set up mlir-hello
 mkdir build && cd build
 cmake -G Ninja .. \
-  -DLLVM_DIR=$LLVM_REPO/bld/lib/cmake/llvm \
-  -DMLIR_DIR=$LLVM_REPO/bld/lib/cmake/mlir \
+  -DLLVM_DIR=$LLVM_REPO/build/lib/cmake/llvm \
+  -DMLIR_DIR=$LLVM_REPO/build/lib/cmake/mlir \
 
-cmake --build . --target hello-opt
+cmake --build . --target zakee-opt
 
 # test run
 
