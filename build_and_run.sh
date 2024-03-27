@@ -16,7 +16,7 @@ set -e
 cmake "-H$LLVM_REPO/llvm" \
      "-B$BUILD_DIR" \
      -DLLVM_INSTALL_UTILS=ON \
-     -DLLVM_ENABLE_PROJECTS="mlir;clang" \
+     -DLLVM_ENABLE_PROJECTS="mlir" \
      -DLLVM_INCLUDE_TOOLS=ON \
      -DLLVM_BUILD_EXAMPLES=ON \
      -DLLVM_TARGETS_TO_BUILD="X86" \
@@ -24,7 +24,8 @@ cmake "-H$LLVM_REPO/llvm" \
      -DLLVM_ENABLE_ASSERTIONS=ON \
      -DLLVM_ENABLE_RTTI=ON \
      -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_DIR \
-     -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DLLVM_ENABLE_LLD=ON \
+     -DCMAKE_C_COMPILER=clang \
+     -DCMAKE_CXX_COMPILER=clang++ \
 
 cmake --build $BUILD_DIR --target check-mlir -j 100
 #cmake --build $BUILD_DIR --target install -j 10
